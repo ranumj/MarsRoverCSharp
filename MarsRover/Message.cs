@@ -8,6 +8,8 @@ namespace MarsRover
 
         public Message(string name, Command[] commands)
         {
+            Name = name;
+            Commands = commands;
         }
     }
 }

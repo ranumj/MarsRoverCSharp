@@ -13,7 +13,7 @@ namespace MarsRoverTests
         {
             try
             {
-                new Command("");
+                new Command("Oops");
             }
             catch (ArgumentNullException ex)
             {
@@ -32,8 +32,16 @@ namespace MarsRoverTests
         public void ConstructorSetsInitialNewPositionValue()
         {
             Command newCommand = new Command("MOVE", 20);
-            Assert.AreEqual(newCommand.NewPostion, 20);
+            Assert.AreEqual(newCommand.NewPosition, 20);
         }
+
+        [TestMethod]
+        public void ConstructorSetsInitialNewModeValue()
+        {
+            Command newCommand = new Command("MOVE", "NORMAL");
+            Assert.AreEqual(newCommand.NewMode, "NORMAL");
+        }
+
 
     }
 }
